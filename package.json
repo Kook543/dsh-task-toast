@@ -1,0 +1,64 @@
+{
+  "name": "dsh-task-toast",
+  "version": "0.3.0",
+  "description": "Windows 10/11 desktop notifications for DeepSeek Harness: approval requests, interruptions, questions, and completed tasks; clicking one opens the session that produced it.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "scripts",
+    "locale/*.json",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "PUBLISHING.md",
+    "LICENSE",
+    "_smoke.mjs",
+    "_smoke-click.mjs",
+    "_smoke-client.mjs"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "notification",
+    "toast",
+    "windows"
+  ],
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.2-rc.1 <0.3.0-0"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml",
+      "platforms": [
+        "win32"
+      ]
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "scripts": {
+    "test": "node _smoke-click.mjs && node _smoke-client.mjs",
+    "pack:check": "npm pack --dry-run"
+  },
+  "author": "dsh-task-toast contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kook543/dsh-task-toast.git"
+  },
+  "homepage": "https://github.com/Kook543/dsh-task-toast#readme",
+  "bugs": "https://github.com/Kook543/dsh-task-toast/issues"
+}

@@ -1,0 +1,5 @@
+# dsh-task-toast bundle patch — inserts its row into the plugin roster.
+# Install with:  dsh plugin --profile desktop add <path-to-this-dir>
+- insert:
+    - id: dsh-task-toast
+      name: dsh-task-toast
